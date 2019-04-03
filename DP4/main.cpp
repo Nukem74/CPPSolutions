@@ -4,7 +4,7 @@
 
 int main(int argc, char** argv) {
 	printf("Hello Git");
-	printf("Gods of Dev, please help me!");
+	
 	printf("I'm Lone and Lost!");
 	return 0;
 }
