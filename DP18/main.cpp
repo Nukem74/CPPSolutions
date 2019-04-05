@@ -21,6 +21,7 @@ int main(int argc, char** argv) {
 		if(counter < 3)
 		{
 			cout << j;
+			cout << "\n";
 		}
 	}
 	
