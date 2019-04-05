@@ -8,20 +8,19 @@ int main(int argc, char** argv) {
 	cout << "Give me a number";
 	cin >> number;
 
-	for(int j = 1; j != number; j++)
+	for(int j = 1; j <= number; j++)
 	{	
 		counter=0;
-		for(int i = 1; i != j; i++)
+		for(int i = 1; i <= j; i++)
 		{
-			if(number % i == 0)
-			{				
+			if(j % i == 0)
+			{
 				counter++;
 			}
-			if(counter > 1)	break;
 		}
-		if(counter == 2)
+		if(counter < 3)
 		{
-		cout << j;
+			cout << j;
 		}
 	}
 	
