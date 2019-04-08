@@ -21,6 +21,6 @@ int main(int argc, char** argv) {
 	}
 	cout << "\n";
 	cout << "THE K'OS IS PAWAH ";
-	cout >> power;
+	cout << power;
 	return 0;
 }
