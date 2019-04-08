@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
 		result *= aloe;
 		result += number % aloe;
 		number /= aloe;
-	}
+	}/*Этот комментарий поможет мне освоить ветвление в Гит*/
 	cout << "Reversed: ";
 	cout << result;
 	return 0;

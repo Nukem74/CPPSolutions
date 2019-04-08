@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
+/*¬ывести название дн€ недели по его номеру.*/
 int main(int argc, char** argv) {
-	int weekday;
+	int weekday;//»нициализаци€ переменной задающей день недели
 	cout << "Enter a natural number in range 1 to 7";
 	cin >> weekday;
 	switch(weekday)
