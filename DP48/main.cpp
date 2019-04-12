@@ -5,6 +5,34 @@ using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char** argv) {
-	
+	cout << "Enter a number ";
+	int number, result, temp;
+	cin >> number;
+	result = 1;
+	temp = 0;
+	switch (number)
+	{
+		case 0:
+			{
+				result = 0;
+				break;
+			}
+		case 1:
+			{
+				result = 1;
+				break;
+			}
+		default:
+			{
+				for(int i = 2; i < number; i++)
+				{	
+					temp = result - temp;
+					result = result + temp;
+					cout << "\n";
+					cout << result;
+				}
+				break;
+			}
+	}
 	return 0;
 }
