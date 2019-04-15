@@ -4,11 +4,33 @@ using namespace std;
 /*ƒано натуральное число n. ѕроверить, представл€ет ли собой палиндром его дес€тична€ запись.*/
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
+int reverted(int n)
+{
+	int number = n;
+	int rebmun = 0;
+	while(number != 0)
+	{
+		rebmun = rebmun * 10;
+		rebmun = rebmun + number % 10;
+		number = number / 10;
+	}
+	return rebmun;
+}
+
 int main(int argc, char** argv) {
 	cout << "Give n: ";
-	int number, temp, left, right; //initialising variables
+	int number;//, temp, left, right; //initialising variables
 	cin >> number;
-	int length = 0;//initialising length counter
+	if( number == reverted(number))
+	{
+		cout << "\nNumber is palindrome!";
+	}
+	else
+	{
+		cout << "\nNumber is not palindrome";
+	}
+	
+	/*int length = 0;//initialising length counter
 	temp = number;
 	left = 0;//setting cheksum variables to 0
 	right = 0;
@@ -35,7 +57,7 @@ int main(int argc, char** argv) {
 	else
 	{
 		cout << "\nNumber is not palindrome";
-	}
+	}*/
 
 	return 0;
 }
