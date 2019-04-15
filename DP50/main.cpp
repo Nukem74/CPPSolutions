@@ -20,6 +20,13 @@ int main(int argc, char** argv) {
 		expf = expf + rowM;
 		step++;
 	}
-	cout << expf;
+	int counter = 0;
+	while(eps < 1)
+	{
+		eps = eps * 10;
+		counter++;
+	}
+	cout.precision(counter);
+	cout <<  fixed << expf;
 	return 0;
 }
