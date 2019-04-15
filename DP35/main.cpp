@@ -3,6 +3,18 @@ using namespace std;
 
 /*Даны натуральные числа x и n (n <= 10). Вывести на экран число x, записанное в системе счисления с основанием n.*/
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
+int reverted(int n)
+{
+	int number = n;
+	int rebmun = 0;
+	while(number != 0)
+	{
+		rebmun = rebmun * 10;
+		rebmun = rebmun + number % 10;
+		number = number / 10;
+	}
+	return rebmun;
+}
 
 int main(int argc, char** argv) {
 	cout << "Enter a number, and a base";
@@ -19,14 +31,7 @@ int main(int argc, char** argv) {
 		result += number % base;
 		number = number / base;
 	}
-	temp = result;
-	result = 0;
-	while(temp != 0)//reverting result
-	{	
-		result *= 10;
-		result += temp % 10;
-		temp = temp / 10;
-	}
+	result = reverted(result);
 	cout << result;
 	return 0;
 }
