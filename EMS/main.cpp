@@ -8,18 +8,62 @@ using namespace std;
 1 ôóò (foot) = 12 äþéìàì = 0,3048 ì
 1 äþéì (inch) =  2,54 ñì
 */
-double ToInches(double m)
-{
-	double _Inches = m / 0.0254;
-	return _Inches;
-}
 
-bool chkInches(double m)
+class HerMajestyMeasurmentSystem
 {
-	return(m > 0.0254);
-}
+	private :
+		double meters;
+		void getInches(double m)
+		{
+			inches = m / 0.0254;
+		}
+		void getFeets(double i)
+		{
+			while(i > 12)
+			{
+				feets++;
+				i = i - 12;
+			}
+		}
+		void getMiles(double f)
+		{
+			while(f > 5280)
+			{
+				StMiles++;
+				f = f - 5280;
+			}
+		}
+	
+		
+	public :
+		double inches;
+		double feets;
+		double StMiles;
+		double getMeters(double m)
+		{
+			meters = m;
+		}
+		getInches(meters);
+		getFeets(inches);
+		getMiles(feets);
+		void dispInches()
+		{
+			cout << "There are " << inches << " inches" << endl;
+		}
+		void dispfeets()
+		{
+			cout << "There are " << feets << " feets" << endl;
+		}
+		void dispStMiles()
+		{
+			cout << "There are " << StMiles << " Statut Miles" << endl;
+		}
+		
+		
+};
 
-double ToFeets(double m)
+
+/*double ToFeets(double m)
 {
 	double _feets = m / 0.3048;
 	return _feets;
@@ -61,32 +105,19 @@ double ToNauMiles(double m)
 bool chkNauMiles(double m)
 {
 	return (m > 1853.257);
-}
+}*/
 int main(int argc, char** argv) {
 	
 	double meters;
 	cout << "Enter meters ";
 	cin >> meters;
-	int StMiles, Yards,Feets,Inches;
-	if(chkStMiles(meters))
-	{
-		StMiles = (int)ToStMiles(meters);
-		cout << "There are " << StMiles << "Miles" << endl;
-	}
-	if(chkYards(meters))
-	{
-		Yards = (int)ToYards(meters);
-		cout << "There are " << Yards << "Yards" << endl;
-	}
-	if(chkFeets(meters))
-	{
-		Feets = (int)ToFeets(meters);
-		cout << "There are " << Feets << "Feets" << endl;
-	}
-	if(chkInches(meters))
-	{
-		Inches = (int)ToInches(meters);
-		cout << "There are " << Inches << "Inches" << endl;
-	}
+	HerMajestyMeasurmentSystem HMMS1;
+	HMMS1.getMeters(meters);
+	HMMS1.dispInches();
+	cout << "Checking access to Inches " << HMMS1.inches << endl;
+	HMMS1.dispfeets();
+	cout << "Checking access to Feets " << HMMS1.feets << endl;
+	HMMS1.dispStMiles();
+	cout << "Checking acces to Statute Miles " << HMMS1.StMiles << endl;
 	return 0;
 }
