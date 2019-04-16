@@ -13,7 +13,7 @@ class HerMajestyMeasurmentSystem
 {
 	private :
 		double meters;
-		void getInches(double m)
+		/*void getInches(double m)
 		{
 			inches = m / 0.0254;
 		}
@@ -32,20 +32,27 @@ class HerMajestyMeasurmentSystem
 				StMiles++;
 				f = f - 5280;
 			}
-		}
+		}*/
 	
 		
 	public :
-		double inches;
-		double feets;
-		double StMiles;
+		double inches = meters / 0.0254;
+		double feets = 0;
+		double StMiles = 0;
 		double getMeters(double m)
 		{
 			meters = m;
 		}
-		getInches(meters);
-		getFeets(inches);
-		getMiles(feets);
+		while(inches > 12)
+		{
+			feets++;
+			i = i - 12;
+		}
+		while(f > 5280)
+		{
+			StMiles++;
+			f = f - 5280;
+		}
 		void dispInches()
 		{
 			cout << "There are " << inches << " inches" << endl;
