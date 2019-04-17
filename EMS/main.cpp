@@ -13,7 +13,7 @@ class HerMajestyMeasurmentSystem
 {
 	private :
 		double meters;
-		/*void getInches(double m)
+		void getInches(double m)
 		{
 			inches = m / 0.0254;
 		}
@@ -32,26 +32,28 @@ class HerMajestyMeasurmentSystem
 				StMiles++;
 				f = f - 5280;
 			}
-		}*/
+		}
 	
 		
 	public :
-		double inches = meters / 0.0254;
-		double feets = 0;
-		double StMiles = 0;
-		double getMeters(double m)
+		double inches;
+		double feets;
+		double StMiles;
+		HerMajestyMeasurmentSystem(double m) : meters(m)
 		{
-			meters = m;
-		}
-		while(inches > 12)
-		{
-			feets++;
-			i = i - 12;
-		}
-		while(f > 5280)
-		{
-			StMiles++;
-			f = f - 5280;
+			inches = m / 0.0254;
+			feets = 0;
+			StMiles = 0;
+			while(inches > 12)
+			{
+				feets++;
+				inches = inches - 12;
+			}
+			while(feets > 5280)
+			{
+				StMiles++;
+				feets = feets - 5280;
+			}
 		}
 		void dispInches()
 		{
@@ -118,8 +120,7 @@ int main(int argc, char** argv) {
 	double meters;
 	cout << "Enter meters ";
 	cin >> meters;
-	HerMajestyMeasurmentSystem HMMS1;
-	HMMS1.getMeters(meters);
+	HerMajestyMeasurmentSystem HMMS1(meters);
 	HMMS1.dispInches();
 	cout << "Checking access to Inches " << HMMS1.inches << endl;
 	HMMS1.dispfeets();
