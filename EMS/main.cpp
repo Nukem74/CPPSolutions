@@ -12,29 +12,7 @@ using namespace std;
 class HerMajestyMeasurmentSystem
 {
 	private :
-		double meters;
-		void getInches(double m)
-		{
-			inches = m / 0.0254;
-		}
-		void getFeets(double i)
-		{
-			while(i > 12)
-			{
-				feets++;
-				i = i - 12;
-			}
-		}
-		void getMiles(double f)
-		{
-			while(f > 5280)
-			{
-				StMiles++;
-				f = f - 5280;
-			}
-		}
-	
-		
+		double meters;	
 	public :
 		double inches;
 		double feets;
@@ -72,49 +50,7 @@ class HerMajestyMeasurmentSystem
 };
 
 
-/*double ToFeets(double m)
-{
-	double _feets = m / 0.3048;
-	return _feets;
-}
 
-bool chkFeets(double m)
-{
-	return(m > 0.3048);
-}
-
-double ToYards(double m)
-{
-	double _yards = m / 0.9144;
-	return _yards;
-}
-
-bool chkYards(double m)
-{
-	return (m > 0.9144);
-}
-
-double ToStMiles(double m)
-{
-	double _StMiles = m / 1609.344;
-	return _StMiles;
-}
-
-bool chkStMiles(double m)
-{
-	return(m > 1609.344);
-}
-
-double ToNauMiles(double m)
-{
-	double _NauMiles = m /  1853.257;
-	return _NauMiles;
-}
-
-bool chkNauMiles(double m)
-{
-	return (m > 1853.257);
-}*/
 int main(int argc, char** argv) {
 	
 	double meters;
