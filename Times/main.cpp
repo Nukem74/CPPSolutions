@@ -18,7 +18,7 @@ class Time
 		
 		Time(int h, int m, int s): _hours(h) , _minutes(m) , _seconds(s)		//конструктор с 3 аргументами
 		{
-			while(_seconds >= 60)
+			while(_seconds >= 60)												//форматирование времени
 			{
 				_seconds -= 60;
 				_minutes++;
@@ -33,16 +33,16 @@ class Time
 				_hours -= 12;
 			}
 		}
-		void dispTime() const
+		void dispTime() const													//публичный метод отображающий приватные поля
 		{
 			cout << "\n" << _hours << ':' << _minutes << ':' << _seconds << endl;
 		}
-		Time addTime(Time a, Time b)
+		void/*Time*/ addTime(Time a, Time b)											//публичный метод принимающий в качестве аргументов два объекта класса Time и изменяющий значение приватных полей
 		{
 			_hours = a._hours + b._hours;
 			_minutes = a._minutes + b._minutes;
 			_seconds = a._seconds + b._seconds;
-			while(_seconds >= 60)
+			while(_seconds >= 60)														//форматирование времени
 			{
 				_seconds -= 60;
 				_minutes++;
@@ -56,11 +56,19 @@ class Time
 			{
 				_hours -= 12;
 			}
+			
 		}
 		
 };
 
 
 int main(int argc, char** argv) {
+	//демонстратор работы класса
+	Time T1(0, 121, 61);
+	Time T2(0, 0, 0);
+	Time T3;
+	T3.addTime(T1,T2);
+	T3.dispTime();
+	
 	return 0;
 }
