@@ -8,13 +8,35 @@ class fraction
 		int _numerator;
 		int _denominator;
 	public:							//перечисление публичных членов
-		fraction(int n, int d): _numerator(n), _denominator
+		fraction()					//конструктор без аргументов
 		{
 			//empty
 		}
+		void setVal(int n, int d)
+		{
+			cout << "Enter numerator: ";
+			cin >> n;
+			_numerator = n;
+			cout << "Enter denominator: ";
+			cin >> d;
+			_denominator = d;
+		}
+		void dispFrac()const
+		{
+			cout << _numerator << endl;
+			cout << "__";
+			cout << _denominator << endl;
+		}
+		void add(fraction a, fraction b)
+		{
+			_numerator = (a._numerator*b._denominator) + (a._denominator*b._numerator);
+			_denominator = a._denominator * b._denominator;
+		}
+		
 		
 };
 
 int main(int argc, char** argv) {
+
 	return 0;
 }
