@@ -19,8 +19,12 @@ class date
 			cin >> _year;
 			cout << "Enter month" << endl;
 			cin >> _month;
-			cout << "Enter day" << endl;
-			cin >> _day;
+			while(_month >= 12)
+			{
+				cout << "\nWrong month entry";
+				cout << "\nEnter month" << endl;
+				cin >> _month;
+			}
 			switch(_month)
 			{
 				case 1:
@@ -84,18 +88,18 @@ class date
 						break;
 					}
 			}
+			cout << "Enter day" << endl;
+			cin >> _day;
+			while(_day >= _maxmonth)
+			{
+				cout << "\nWrong day entry";
+				cout << "\nEnter day" << endl;
+				cin >> _day;
+			}
 		}
 		
 		void dispDate()
 		{
-			if(_day >= _maxmonth)
-			{
-				cout << "\nWrong day entry";
-			}
-			if(_month >= 12)
-			{
-				cout << "\nWrong month entry";
-			}
 			cout << _day << '/' << _month << '/' << _year;
 		}
 };
