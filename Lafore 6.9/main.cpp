@@ -12,19 +12,17 @@ class fraction
 		{
 			//empty
 		}
-		void setVal(int n, int d)
+		void setVal()
 		{
 			cout << "Enter numerator: ";
-			cin >> n;
-			_numerator = n;
+			cin >> _numerator;
 			cout << "Enter denominator: ";
-			cin >> d;
-			_denominator = d;
+			cin >> _denominator;
 		}
 		void dispFrac()const
 		{
 			cout << _numerator << endl;
-			cout << "__";
+			cout << "__" << endl;
 			cout << _denominator << endl;
 		}
 		void add(fraction a, fraction b)
@@ -37,6 +35,14 @@ class fraction
 };
 
 int main(int argc, char** argv) {
-
+	fraction A, B, C;
+	A.setVal();
+	A.dispFrac();
+	int number = 1;
+		cout << "\nEnter new fraction to add, or 0 to quit" << endl;
+		B.setVal();
+		B.dispFrac();
+		C.add(A,B);
+		C.dispFrac();
 	return 0;
 }
