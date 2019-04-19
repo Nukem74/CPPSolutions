@@ -104,12 +104,16 @@ class date
 		}
 };
 
+enum etype { laborer, secretary, manager, accountant, executive, researcher};
+
+
 class employee
 {
 	private:						//перечисление приватных членов	
 		int _ID;
 		float _salary;
 		date _hiredate;
+		etype position;
 	public:							//перечисление публичных членов
 		employee()					//конструктор без аргументов
 		{
@@ -128,14 +132,15 @@ class employee
 			cout << _ID << ':' << _salary << "$ from" << endl;
 			cout << "Hired: "; 
 			_hiredate.dispDate();
+			cout << "position: " << position << endl; 
 		}
 		void setHireDate()
 		{
 			_hiredate.setDate();
 		}
-		void dispHD()
+		void setPos(etype pos)
 		{
-			
+			position = pos;
 		}
 };
 
@@ -145,6 +150,7 @@ int main(int argc, char** argv) {
 	emp1.setHireDate();
 	emp1.setID(0);
 	emp1.setSAL(1000);
+	emp1.setPos(accountant);
 	emp1.dispEmp();
 	return 0;
 }
